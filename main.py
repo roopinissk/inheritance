@@ -29,3 +29,20 @@ gen_clean = gen_clean.drop(columns = ['Patient Id', 'Patient First Name', 'Famil
 print(gen_clean.columns)
 print(gen_clean.isna().sum())  #all clean
 
+
+#data analysis
+disorder_count = gen_clean['Genetic Disorder'].value_counts()
+
+#plot
+disorder_count.plot(kind='pie', autopct='%1.1f%%', figsize=(6, 6))
+plt.show()
+
+# plot subclass of disorders
+subclass_count = gen_clean['Disorder Subclass'].value_counts()
+plt.figure(figsize=(10, 6))
+subclass_count.plot(kind= 'bar', width= 0.5, color= 'skyblue')
+plt.title('Disorder Subclass Count')
+plt.xlabel('Disorder Subclass')
+plt.xticks(rotation=45)
+plt.ylabel('Count')
+plt.show()
