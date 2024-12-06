@@ -46,3 +46,32 @@ plt.xlabel('Disorder Subclass')
 plt.xticks(rotation=45)
 plt.ylabel('Count')
 plt.show()
+
+#########################################
+
+# Probability 
+
+#probability of a disorder given the maternal gene influence
+probability_maternal = gen_clean.groupby('Maternal gene')['Disorder Subclass'].value_counts(normalize=True).unstack()
+print(probability_maternal)
+
+
+#probability of a disorder given paternal gene influence
+probability_paternal = gen_clean.groupby('Paternal gene')['Disorder Subclass'].value_counts(normalize=True).unstack()
+print(probability_paternal)
+
+
+#plots
+probability_maternal.plot(kind='bar', stacked=True, figsize=(10, 6), cmap='tab20')
+plt.title('Probability by maternal gene status')
+plt.xlabel('Maternal gene')
+plt.ylabel('Probability')
+plt.legend(title='Disorder Subclass', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.show()
+
+probability_paternal.plot(kind='bar', stacked=True, figsize=(10, 6), cmap='tab20')
+plt.title('Probability by paternal gene status')
+plt.xlabel('Paternal gene')
+plt.ylabel('Probability')
+plt.legend(title='Disorder Subclass', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.show()
