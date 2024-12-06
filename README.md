@@ -11,13 +11,17 @@ taken from kaggle challenge 2021
 
 #### What we plan on achieving with this dataset?
 
-#### Probability of genetic disorders: Calculate the probability of each genetic disorder given the presence of specific maternal or paternal gene indicators/contributions
+#### Probability of genetic disorders: 
+Calculate the probability of each genetic disorder given the presence of specific maternal or paternal gene indicators/contributions
 
-#### Join probability: Examine the probability of concurrent genetic disorders eg. Tay- Sachs and Leigh syndrome. Look into multiple linear regression
+#### Join probability: 
+Examine the probability of concurrent genetic disorders eg. Tay- Sachs and Leigh syndrome. Look into multiple linear regression
 
-#### Conditional probability: Explore conditional probabilities of specific disorders based on clinical factors. Eg. CF and respiratory rate; radiation history and cancer; 
+#### Conditional probability: 
+Explore conditional probabilities of specific disorders based on clinical factors. Eg. CF and respiratory rate; radiation history and cancer; 
 hemochromatosis and rbc. Multiple linear regression. 
 
-#### Causal inference: to identify potential causative relationships, such as whether maternal gene indicators have a stronger causal link to certain disorders 
+#### Causal inference: 
+to identify potential causative relationships, such as whether maternal gene indicators have a stronger causal link to certain disorders 
 than paternal indicators; Question: Are specific genetic markers causally linked to the severity rather than just the presence of disorders (e.g., mutations that exacerbate mitochondrial myopathy)?
 Impact: This could improve the stratification of patients based on risk severity, allowing for more intensive monitoring and tailored therapeutic strategies for high-risk groups. Use bayesian statistics. 
