@@ -5,7 +5,7 @@ import seaborn as sns
 
 # data preprocessing
 
-gen = pd.read_csv('/Users/rubee/Documents/nyu_fall/methods_2024/inheritance/genetic_disorders.csv')
+gen = pd.read_csv('./genetic_disorders.csv')
 gen.head()
 
 #drop na
@@ -75,3 +75,5 @@ plt.xlabel('Paternal gene')
 plt.ylabel('Probability')
 plt.legend(title='Disorder Subclass', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.show()
+
+
