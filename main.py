@@ -2,6 +2,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, accuracy_score
+from scipy.stats import chi2_contingency
 
 # data preprocessing
 
@@ -76,4 +80,38 @@ plt.ylabel('Probability')
 plt.legend(title='Disorder Subclass', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.show()
 
+#########################################
 
+# Chi-Square Test Respiratory rate vs Birth asphyxia 
+contingency_table = pd.crosstab(
+    gen_clean['Respiratory Rate (breaths/min)'], 
+    gen_clean['Birth asphyxia']
+)
+
+# Perform Chi-Square test
+chi2, p, dof, expected = chi2_contingency(contingency_table)
+
+# Print results
+print("Chi-Square Test Results Respiratory rate vs Birth asphyxia ")
+print(f"Chi-Square Statistic: {chi2}")
+print(f"p-value: {p}")
+print(f"Degrees of Freedom: {dof}")
+print("Expected Frequencies:")
+print(expected)
+
+#########################################
+contingency_table = pd.crosstab(
+    gen_clean['Maternal gene'], 
+    gen_clean['Respiratory Rate (breaths/min)']
+)
+
+# Perform Chi-Square test
+chi2, p, dof, expected = chi2_contingency(contingency_table)
+
+# Print results
+print("Chi-Square Test Results:")
+print(f"Chi-Square Statistic: {chi2}")
+print(f"p-value: {p}")
+print(f"Degrees of Freedom: {dof}")
+print("Expected Frequencies:")
+print(expected)
